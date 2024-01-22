@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div>
+{% if selected_animal_type %}
+    <h2 style='text-align: center;'>Sorted By: "{{ selected_animal_type }}"</h2>
+{% endif %}
+</div>
+<div>
+  {% for post in posts %}
+    <article class="media content-section mt-2">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'blog:blog-animals2' post.an_type %}">{{ post.an_type }}</a>
+              <small class="text-muted">{{ post.date_discovered }} |</small>
+              <small class="text-muted">{{ post.discovered_by }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'blog:blog-info' post.animal %}">{{ post.animal }}</a></h2>
+            <p class="article-content">{{ post.definition }}</p>
+          </div>
+        </article>
+  {% endfor %}
+</div>
+
+
+<!-- animals.html -->
+<!-- Add more categories as needed -->
+
+{% endblock %}

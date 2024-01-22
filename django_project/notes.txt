@@ -1,0 +1,4 @@
+12-14-2023 {
+    Need ko na ayusin ung funfacts, bali aayusin kolang ung layout kung pano ko iaadd ung animal, and under nung animal is information/facts about that animal.
+    Populate natin after :)
+}

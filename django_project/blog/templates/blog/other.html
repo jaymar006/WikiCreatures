@@ -1,0 +1,17 @@
+{% load static %}
+
+<div class="col-md-4 mt-2">
+          <div class="content-section">
+            <h3>Other {{ selected_animal_type }}</h3>
+            <p class='text-muted'>Maybe you would like to findout more about ... {{ selected_animal_type }}
+            
+                {% for post in posts %}
+                  <ul class="list-group">
+                    <li class="list-group-item list-group-item-light"><a href="{% url 'blog:blog-info' post.animal %}">{{ post.animal }}</a></li>
+                  </ul>
+                  
+                {% endfor %}
+              
+            </p>
+          </div>
+        </div>

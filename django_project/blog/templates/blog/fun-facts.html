@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div>
+  <h2 style='text-align: center;'>{{ post.animal }}</h2>
+</div>
+
+<div>
+  <article class="media content-section mt-2">
+    <div class="media-body">
+      <h2>{{ random_fact.animal }}</h2>
+      <p class="article-content">{{ random_fact.fact }}</p>
+    </div>
+  </article>
+
+  <article class="media content-section mt-2">
+    <div class="media-body">
+      <div class="article-metadata">
+        <!-- Clickable image to open the modal -->
+        <a href="#" data-toggle="modal" data-target="#imageModal">
+          <img src="{{ random_fact.image.url }}" class="img-fluid" alt="Random Fact Image">
+        </a>
+        <a href="{% url 'blog:blog-funfacts' %}">Generate another fact</a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- Bootstrap modal for image preview -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">{{ random_fact.animal }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Image preview in the modal -->
+        <img src="{{ random_fact.image.url }}" class="img-fluid" alt="Image Preview">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
