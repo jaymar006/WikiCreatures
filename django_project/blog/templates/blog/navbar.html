@@ -7,26 +7,38 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <form class="form-inline my-2 my-lg-0" action="{% url 'blog:blog-search'%}">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="color: purple;" name='search_query' value='{{ search_query }}'>
-        <button class="btn btn-outline-light my-2 my-sm-0 search" type="submit">Search</button>
+        <input class="form-control mr-sm-2 ml-auto" type="search" placeholder="Search" aria-label="Search" style="color: purple;" name='search_query' value='{{ search_query }}'>
+        <button class="btn btn-outline-light my-2 my-sm-0 search mr-auto ml-auto" type="submit">Search</button>
+          <button class="btn btn-secondary  mr-auto mx-2" type="button" data-toggle="modal" data-target="#sortModal">
+            Sort By
+          </button>
       </form>
-      <div class="dropdown pl-3 pr-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Sort By:          
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-          <a class="dropdown-item" href="{% url 'blog:blog-home' %}">All</a>
-          <li><hr class="dropdown-divider"></li>
-          <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Amphibian' %}">Amphibians</a>  
-          <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Mammal' %}">Mammal</a>
-          <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Bird' %}">Bird</a>
-          <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Reptile' %}">Reptile</a>
-          <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Invertebrates' %}">Invertebrates</a>
-          <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Fish' %}">Fish  </a>
+      
+      <div class="modal" tabindex="-1" role="dialog" id="sortModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Sort By</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <a class="dropdown-item" href="{% url 'blog:blog-home' %}">All</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Amphibian' %}">Amphibians</a>  
+              <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Mammal' %}">Mammal</a>
+              <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Bird' %}">Bird</a>
+              <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Reptile' %}">Reptile</a>
+              <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Invertebrates' %}">Invertebrates</a>
+              <a class="dropdown-item" href="{% url 'blog:blog-animals' 'Fish' %}">Fish</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="ml-auto d-flex ">
-        <ul class="navbar-nav">
+
+      <div class="ml-auto d-flex text-center">
+        <ul class="navbar-nav ml-auto mr-auto ">
           <li class="nav-item active"><a class="nav-link" href="{% url 'blog:blog-home' %}">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'blog:blog-classification' %}">Classification</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'blog:blog-funfacts' %}">Fun Facts</a></li>
@@ -35,7 +47,7 @@
     </div>
   </nav>
 </header>
-  <script type="text/javascript">
+<script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(){
   window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
@@ -51,3 +63,8 @@
   });
 });
   </script>
+  
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-YGVExjZyJ8Fb3Zrv3E1+/QDIiU6IofyNUXJefxqmsht0BpRxx/iDtkQTKxU5Kox" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyJqU/RiHzGfclegnx6ZtM+2r2FNEevoQUE" crossorigin="anonymous"></script>
