@@ -1,6 +1,11 @@
 {% load static %}
 <header class="site-header">
-  <nav id="navbar_top"class="navbar navbar-default navbar-expand-lg navbar-dark bg-dark">
+  <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'blog:blog-front' %}"> <img src="{% static 'blog/images/purpleWCDog.png'%}" height="30" width="50"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
       <div class="ml-auto d-flex">
         <ul class="navbar-nav">
           <li class="nav-item active"><a class="nav-link" href="{% url 'blog:blog-home' %}">Home</a></li>
@@ -8,5 +13,6 @@
           <li class="nav-item"><a class="nav-link" href="{% url 'blog:blog-funfacts' %}">Fun Facts</a></li>
         </ul>
       </div>
-      
+    </div>
   </nav>
+</header>
