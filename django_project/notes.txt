@@ -2,3 +2,7 @@
     Need ko na ayusin ung funfacts, bali aayusin kolang ung layout kung pano ko iaadd ung animal, and under nung animal is information/facts about that animal.
     Populate natin after :)
 }
+
+1-26-2023 {
+    i want you to give 7 animals with each categories, Amphibians, Mamals, Birds, Reptiles, Invertebrates. And give their Native habittat, commonly sees,  scientific names and lastly, a short information about those animals (not catorgies). also what they belong to (herbivore, omnivore, carnivore, insectivore, etc.)
+}

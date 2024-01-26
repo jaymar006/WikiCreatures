@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.db import models
-from .models import Post, FunFact
+from .models import Post, FunFact, Category
 
 def front(request):
     return render(request, 'blog/front.html')
@@ -42,7 +42,8 @@ def sort_animals_type(request, animal_type=None):
     return render(request, 'blog/sorting_clicked.html', context)
 
 def classification(request):
-    return render(request, 'blog/classification.html')
+    categories = Category.objects.all()
+    return render(request, 'blog/classification.html', {'categories': categories})
 
 def funfacts(request):
     random_fact = FunFact.objects.order_by('?').first()

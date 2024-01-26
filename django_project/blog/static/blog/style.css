@@ -1,4 +1,6 @@
-
+.form-inline .search-input{
+  text-decoration: underline;
+}
 .center {
   display: block;
   margin-left: auto;

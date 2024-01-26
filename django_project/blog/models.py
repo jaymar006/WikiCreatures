@@ -2,6 +2,7 @@ from django.db import models
 from PIL import Image
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.db import models
 
 class Post(models.Model):
 	an_type = models.CharField(max_length=100)
@@ -28,3 +29,12 @@ class FunFact(models.Model):
 
 	def __str__(self):
 		return self.animal
+
+
+class Category(models.Model):
+    categories_type = models.CharField(max_length=255)
+    categories_description = models.TextField()
+    category_image = models.ImageField(upload_to='category_images/%y')
+
+    def __str__(self):
+        return self.categories_type
