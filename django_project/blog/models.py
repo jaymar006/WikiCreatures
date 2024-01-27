@@ -9,11 +9,14 @@ class Post(models.Model):
 	animal_cat = models.CharField(max_length=50)
 	animal = models.CharField(max_length=100)
 	definition = models.TextField()
-	date_discovered = models.CharField(max_length=100)
-	discovered_by = models.CharField(max_length=100)
+	location_discovered = models.CharField(max_length=100)
+	location = models.CharField(max_length=100)
 	more_info = models.TextField(null=True, blank=True)
 	image_name = models.CharField(max_length=50)
 	image = models.ImageField(upload_to="img/%y", height_field=None, width_field=None, max_length=None)
+	sci_name = models.CharField(max_length=255)
+	fav_food = models.CharField(max_length=255)
+
 
 
 	def __str__(self):

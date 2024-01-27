@@ -22,9 +22,15 @@ def sort_animals(request, animal_type=None):
         sort_query = Post.objects.filter(an_type = animal_type)
     else:
         sort_query = Post.objects.all()
+        sci_name = sort_query.values_list('sci_name', flat=True)
+        fav_food = sort_query.values_list('fav_food', flat=True)
+        animal_cat = sci_name = sort_query.values_list('animal_cat', flat=True)
     context1 = {
         'posts' : sort_query,
-        'selected_animal_type' : animal_type
+        'selected_animal_type' : animal_type,
+        'sci_name' : sci_name,
+        'fav_food' : fav_food,
+        'animal_cat' : animal_cat
     }
     return render(request, 'blog/sorting.html', context1)
 
