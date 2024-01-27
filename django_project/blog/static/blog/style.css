@@ -5,23 +5,14 @@
   display: inline-block;
 }
 
-.img-container{
-  border: 2px solid white ;
+.img-container:hover{
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
 }
-.img-container:hover .glow {
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-}
-.img-container img {
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 10px;
-}
-.img-container-modal img{
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-}
 
+.img-container img {
+  border-radius: 10px;
+}
 /* End ng css sa clicked_info.html */
 /* Start ng css sa classification.html */
 .class-img:hover{

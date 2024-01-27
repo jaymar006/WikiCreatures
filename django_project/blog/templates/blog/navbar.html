@@ -13,7 +13,6 @@
             Sort By
           </button>
       </form>
-      
       <div class="modal fade" tabindex="-1" role="dialog" id="sortModal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -76,4 +75,13 @@
       $(this).find('.modal-dialog').addClass('animated fadeOut');
     });
   });
+  $(document).ready(function() {
+            $('#searchForm').submit(function(event) {
+                var searchQuery = $('#searchInput').val();
+                if (!searchQuery.trim()) {
+                    $('#emptySearchModal').modal('show');
+                    event.preventDefault(); // Prevent form submission
+                }
+            });
+        });
 </script>
