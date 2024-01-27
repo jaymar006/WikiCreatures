@@ -28,9 +28,6 @@ def sort_animals(request, animal_type=None):
     context1 = {
         'posts' : sort_query,
         'selected_animal_type' : animal_type,
-        'sci_name' : sci_name,
-        'fav_food' : fav_food,
-        'animal_cat' : animal_cat
     }
     return render(request, 'blog/sorting.html', context1)
 
