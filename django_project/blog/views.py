@@ -1,11 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
+from django.contrib import messages
 from django.db import models
 from .models import Post, FunFact, Category
 
 def front(request):
     return render(request, 'blog/front.html')
 
+def class_view(request):
+    return render(request, 'blog/classification_view.html')
+
+
+def class_view(request):
+    return render(request, 'blog/classification_view.html')
 
 def home(request):
     template_name = 'blog/home.html'
@@ -59,7 +66,8 @@ def funfacts(request):
 def search(request):
     search_query = request.GET.get('search_query', '')
     if not search_query:
-        return redirect('blog:blog-home')
+        messages.error(request, "Please enter a search query.")
+        return redirect('blog:blog-front')
     search_results = Post.objects.filter(
         models.Q(an_type__icontains = search_query) |
         models.Q(animal__icontains = search_query) |

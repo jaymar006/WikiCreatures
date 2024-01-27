@@ -11,4 +11,5 @@ urlpatterns = [
     path('Sorted-link/<str:animal_type>/', views.sort_animals_type, name='blog-animals2'),
     path('Animal/<str:animal_name>', views.clicked_info, name='blog-info'),
     path('Search/', views.search, name='blog-search'),
+    path('classification_info',views.class_view, name='blog-class_view'),
 ]

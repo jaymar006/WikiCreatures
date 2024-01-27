@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
 <div>
   <article class="media content-section mt-2">
@@ -21,10 +22,10 @@
 
   <article class="media content-section mt-2 text-center">
     <div class="media-body">
-      <div class="article-metadata">
+      <div class="article-metadata img-container ">
         <!-- Clickable image to open the modal -->
         <a href="#" data-toggle="modal" data-target="#imageModal">
-          <img src="{{ post.image.url }}" class="img-fluid mx-auto" width="500" height="500" alt="Image">
+          <img src="{{ post.image.url }}" class="img-fluid mx-2 my-2 glow " width="500" height="500" alt="Image">
         </a>
       </div>
     </div>
@@ -41,7 +42,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-center">
+      <div class="modal-body text-center img-container-modal">
         <!-- Larger image preview in the modal -->
         <img src="{{ post.image.url }}" class="img-fluid" alt="Image Preview">
       </div>
