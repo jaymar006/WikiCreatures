@@ -67,8 +67,8 @@ def search(request):
         models.Q(an_type__icontains = search_query) |
         models.Q(animal__icontains = search_query) |
         models.Q(definition__icontains = search_query) |
-        models.Q(date_discovered__icontains = search_query) |
-        models.Q(discovered_by__icontains = search_query) |
+        models.Q(location_discovered__icontains = search_query) |
+        models.Q(location__icontains = search_query) |
         models.Q(more_info__icontains = search_query    )
         )
     return render(request, 'blog/search.html', {'search_query' : search_query, 'search_results' : search_results})
