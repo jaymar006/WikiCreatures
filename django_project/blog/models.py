@@ -41,3 +41,23 @@ class Category(models.Model):
 
     def __str__(self):
         return self.categories_type
+	
+
+class Category_informations(models.Model):
+    categories_type = models.CharField(max_length=255)
+    categories_description = models.TextField()
+    category_image = models.ImageField(upload_to='category_images/%Y')
+    image_one = models.ImageField(upload_to='category_images/catview_images/%Y', blank=True, null=True)
+    image_two = models.ImageField(upload_to='category_images/catview_images/%Y', blank=True, null=True)
+    image_three = models.ImageField(upload_to='category_images/catview_images/%Y', blank=True, null=True)
+    image_four = models.ImageField(upload_to='category_images/catview_images/%Y', blank=True, null=True)
+    image_five = models.ImageField(upload_to='category_images/catview_images/%Y', blank=True, null=True)
+    image_six = models.ImageField(upload_to='category_images/catview_images/%Y', blank=True, null=True)
+    characteristics = models.TextField()
+    habitat = models.TextField()
+    diet = models.TextField()
+    reproduction = models.TextField()
+    notable_species = models.TextField()
+
+    def __str__(self):
+        return self.categories_type

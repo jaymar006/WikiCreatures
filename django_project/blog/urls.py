@@ -9,7 +9,7 @@ urlpatterns = [
     path('fun-facts/', views.funfacts, name = 'blog-funfacts'),
     path('Sorted/<str:animal_type>/', views.sort_animals, name='blog-animals'),
     path('Sorted-link/<str:animal_type>/', views.sort_animals_type, name='blog-animals2'),
-    path('Animal/<str:animal_name>', views.clicked_info, name='blog-info'),
+    path('Animal/<str:animal_name>/', views.clicked_info, name='blog-info'),
     path('Search/', views.search, name='blog-search'),
-    path('classification_info',views.class_view, name='blog-class_view'),
+    path('classification_info/<str:categories_type>/',views.class_view, name='class_view'),
 ]

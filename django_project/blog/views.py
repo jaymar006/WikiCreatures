@@ -2,17 +2,12 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.db import models
-from .models import Post, FunFact, Category
+from .models import Post, FunFact, Category, Category_informations
 
 def front(request):
     return render(request, 'blog/front.html')
 
-def class_view(request):
-    return render(request, 'blog/classification_view.html')
 
-
-def class_view(request):
-    return render(request, 'blog/classification_view.html')
 
 def home(request):
     template_name = 'blog/home.html'
@@ -54,6 +49,10 @@ def sort_animals_type(request, animal_type=None):
 def classification(request):
     categories = Category.objects.all()
     return render(request, 'blog/classification.html', {'categories': categories})
+
+def class_view(request, categories_type):
+    category_info = get_object_or_404(Category_informations, categories_type=categories_type)
+    return render(request, 'blog/classification_view.html', {'category_info': category_info})
 
 def funfacts(request):
     random_fact = FunFact.objects.order_by('?').first()
