@@ -10,18 +10,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel='stylesheet' href='{% static "blog/style.css" %}'>
-    <title>{% block title %}{% endblock title %}</title>
+    <title>{% block title %}WikiCreatures{% endblock title %}</title>
+    <link rel='icon' href='{% static 'blog/images/purpleWCDog.png' %}' type='image/'>
 </head>
 <body>
     {% include 'blog/navbar-no-search.html' %}
 
     <div class="container-fluid no-margin">
-        <img src="{% static 'blog/images/WCDOG.svg' %}" class="rounded mx-auto d-block pt-5 mb-2" width='25%' alt="...">
+        <img src="{% static 'blog/images/WICREATURES.svg' %}" class="mx-auto d-block img-fluid" alt="...">
         <div class="row pb-3">
             <div class="col-12 col-md-8 offset-md-2 d-flex justify-content-center align-items-center">
                 <div class="divider-1">
                     <form id="searchForm" class="form-inline my-2 my-lg-0 search-form" action="{% url 'blog:blog-search'%}">
-                        <input id="searchInput" class="form-control text-dark input-lg mr-sm-2 search-input" type="search" style="color: darkgray; text-decoration: None;" placeholder="Animal" aria-label="Search" name='search_query' value='{{ search_query }}'>
+                        <input id="searchInput" class="form-control text-dark input-lg mr-sm-2 search-input" type="search" style="color: darkgray; text-decoration: None;" placeholder="Animal, Types, Habitat" aria-label="Search" name='search_query' value='{{ search_query }}'>
                         <button class="btn btn-outline-light my-2 my-sm-0 search ml-auto mr-auto" type="submit">Search</button>
                     </form>
                 </div>
