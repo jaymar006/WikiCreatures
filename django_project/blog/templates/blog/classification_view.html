@@ -1,71 +1,77 @@
-{% extends 'blog/base.html' %}
-{% block content %}
-<div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">{{ category_info.categories_type }}</h2>
-      <p class="lead">{{ category_info.categories_description }}</p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_one.url}}" alt="Generic placeholder image"> <!--EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
+  {% extends 'blog/base.html' %}
+  {% load static %}
+  {% block content %}
   <div class="row featurette">
-    <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading">Characteristics of {{category_info.categories_type}}</h2>
-      <p class="lead">{{ category_info.characteristics }}  </p>
+      <div class="col-md-7">
+        <h2 class="featurette-heading">{{ category_info.categories_type }}</h2>
+        <p class="lead indent-text">{{ category_info.categories_description | linebreaks }}</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_one.url}}" alt="Generic placeholder image"> <!--EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+      </div>
     </div>
-    <div class="col-md-5 order-md-1">
-      <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_two.url}}" alt="Generic placeholder image"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
-    </div>
-  </div>
 
-  <hr class="featurette-divider">
+    <hr class="featurette-divider">
 
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">Habitat</h2>
-      <p class="lead">{{category_info.habitat}}</p>
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Characteristics of {{category_info.categories_type}}</h2>
+        <p class="lead">{{ category_info.characteristics | linebreaks }}  </p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_two.url}}" alt="Generic placeholder image"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+      </div>
     </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_three.url}}" alt="Generic placeholder image"><!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
-    </div>
-  </div>
-  <hr class="featurette-divider">
 
-  <div class="row featurette">
-    <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading">Reproduction</h2>
-      <p class="lead">{{category_info.reproduction}}</p>
-    </div>
-    <div class="col-md-5 order-md-1">
-      <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_five.url}}" alt="Generic placeholder image"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
-    </div>
-  </div>
-  <hr class="featurette-divider">
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">Diet</h2>
-      <p class="lead">{{category_info.diet}}</p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_four.url}}" alt="Generic placeholder image"> <!--EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
-    </div>
-  </div>
+    <hr class="featurette-divider">
 
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading">Notable Species</h2>
-      <p class="lead">{{category_info.notable_species}}</p>
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Habitat</h2>
+        <p class="lead">{{category_info.habitat | linebreaks}}</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_three.url}}" alt="Generic placeholder image"><!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+      </div>
     </div>
-    <div class="col-md-5 order-md-1">
-      <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_six.url}}" alt="Generic placeholder image"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
-    </div>
-  </div>
+    <hr class="featurette-divider">
 
-  <hr class="featurette-divider">
-{% endblock content %}
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Reproduction</h2>
+        <p class="lead">{{category_info.reproduction | linebreaks}}</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_five.url}}" alt="Generic placeholder image"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+      </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Diet</h2>
+        <p class="lead">{{category_info.diet | linebreaks}}</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_four.url}}" alt="Generic placeholder image"> <!--EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Notable Species</h2>
+        <p class="lead">{{category_info.notable_species | linebreaks}}</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" src="{{ category_info.image_six.url}}" alt="Generic placeholder image"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <div class='container d-block '>
+      <div class='text-center'>
+        <a class="btn btn-secondary " href="{% url 'blog:blog-classification' %}" role="button">Go Back</a>
+      </div>
+    </div>
+  {% endblock content %}

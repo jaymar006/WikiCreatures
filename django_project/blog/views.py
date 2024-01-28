@@ -65,7 +65,6 @@ def funfacts(request):
 def search(request):
     search_query = request.GET.get('search_query', '')
     if not search_query:
-        messages.error(request, "Please enter a search query.")
         return redirect('blog:blog-front')
     search_results = Post.objects.filter(
         models.Q(an_type__icontains = search_query) |
