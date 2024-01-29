@@ -1,5 +1,6 @@
   {% extends 'blog/base.html' %}
   {% load static %}
+  {% block title %}{{ category_info.categories_type }}{% endblock title %}
   {% block content %}
   <div class="row featurette">
       <div class="col-md-7">
