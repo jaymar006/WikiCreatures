@@ -146,4 +146,9 @@ a.article-title:hover {
 .lead {
   text-indent: 1em;
 }
+/* Front.html */
+#mainlogo {
+  width: 50%;
+  height: 50%;
+}
 
