@@ -8,7 +8,7 @@
         <p class="lead">{{ category_info.categories_description | linebreaks }}</p>
       </div>
       <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_one.url}}" alt="Generic placeholder image"> <!--EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_one.url}}" alt="Generic placeholder image" data-toggle="modal" data-target="#imageModal1" > <!--EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
       </div>
     </div>
 
@@ -20,7 +20,7 @@
         <p class="lead">{{ category_info.characteristics | linebreaks }}  </p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_two.url}}" alt="Generic placeholder image"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_two.url}}" alt="Generic placeholder image" data-toggle="modal" data-target="#imageModal2"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
       </div>
     </div>
 
@@ -32,7 +32,7 @@
         <p class="lead">{{category_info.habitat | linebreaks}}</p>
       </div>
       <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_three.url}}" alt="Generic placeholder image"><!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_three.url}}" alt="Generic placeholder image" data-toggle="modal" data-target="#imageModal3" ><!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
       </div>
     </div>
     <hr class="featurette-divider">
@@ -43,7 +43,7 @@
         <p class="lead">{{category_info.reproduction | linebreaks}}</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_five.url}}" alt="Generic placeholder image"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_five.url}}" alt="Generic placeholder image" data-toggle="modal" data-target="#imageModal5" > <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
       </div>
     </div>
     <hr class="featurette-divider">
@@ -53,7 +53,7 @@
         <p class="lead">{{category_info.diet | linebreaks}}</p>
       </div>
       <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_four.url}}" alt="Generic placeholder image"> <!--EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_four.url}}" alt="Generic placeholder image "data-toggle="modal" data-target="#imageModal4" > <!--EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
       </div>
     </div>
 
@@ -65,7 +65,7 @@
         <p class="lead">{{category_info.notable_species | linebreaks}}</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_six.url}}" alt="Generic placeholder image"> <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
+        <img class="featurette-image img-fluid mx-auto shadow zoom-container" src="{{ category_info.image_six.url}}" alt="Generic placeholder image"data-toggle="modal" data-target="#imageModal6" > <!-- EXAMPLES OF IMAGE OF THE SAMECLASSIFICATION-->
       </div>
     </div>
 
@@ -75,5 +75,95 @@
         <a class="btn btn-secondary " href="#" role="button">Back at the top</a>
       </div>
     </div>
-      
+    
+    <div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="imageModalLabel">{{ random_fact.animal }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <img class="img-fluid mx-auto" src="{{ category_info.image_one.url }}" alt="Image 1">
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalLabel">{{ random_fact.animal }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <img class="img-fluid mx-auto" src="{{ category_info.image_two.url }}" alt="Image 1">
+        </div>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="imageModal3" tabindex="-1" role="dialog" aria-labelledby="imageModal3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">{{ random_fact.animal }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        <img class="img-fluid mx-auto" src="{{ category_info.image_three.url }}" alt="Image 1">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="imageModal4" tabindex="-1" role="dialog" aria-labelledby="imageModal4Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">{{ random_fact.animal }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        <img class="img-fluid mx-auto" src="{{ category_info.image_four.url }}" alt="Image 1">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="imageModal5" tabindex="-1" role="dialog" aria-labelledby="imageModal5Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">{{ random_fact.animal }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        <img class="img-fluid mx-auto" src="{{ category_info.image_five.url }}" alt="Image 1">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="imageModal6" tabindex="-1" role="dialog" aria-labelledby="imageModal6Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">{{ random_fact.animal }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        <img class="img-fluid mx-auto" src="{{ category_info.image_six.url }}" alt="Image 1">
+      </div>
+    </div>
+  </div>
+</div>
   {% endblock content %}
