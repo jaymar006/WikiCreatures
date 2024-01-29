@@ -143,5 +143,7 @@ a.article-title:hover {
 }
 /* End ng css sa base.html */
 /* Classification_view.html*/
-
+.lead {
+  text-indent: 1em;
+}
 
