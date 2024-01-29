@@ -8,7 +8,7 @@
                 {% for post in posts %}
                   <ul class="list-group pb-2 text-center ">
                     <li class="list-group-item list-group-item-light list-group-item-action text-decoration-none text-reset">
-                      <a class="" href="{% url 'blog:blog-info' post.animal %}">{{ post.animal }}</a>
+                      <a class="btn btn-bg-white px-5 py-x mx-auto my-auto" href="{% url 'blog:blog-info' post.animal %}">{{ post.animal }}</a>
                     </li>
                   </ul>
                 {% endfor %}
