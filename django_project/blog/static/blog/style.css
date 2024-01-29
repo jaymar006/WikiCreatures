@@ -144,7 +144,10 @@ a.article-title:hover {
 /* End ng css sa base.html */
 /* Classification_view.html*/
 .lead {
-  text-indent: 1em;
+  text-indent: 20px;
+  text-align: justify;
+  word-spacing: -3px;
+  line-height: 1.2;
 }
 /* Front.html */
 #mainlogo {
@@ -161,3 +164,4 @@ a.article-title:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
 }
 
+/* Clicked_info.html */

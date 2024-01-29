@@ -5,17 +5,18 @@
 <div>
   <article class="media content-section mt-2 ">
     <div class="media-body">
-      <div class="article-metadata">
-        <a class="mr-2" href="{% url 'blog:class_view' categories_type=post.an_type %}">{{ post.an_type }}</a>
+      <div class="article-metadata text-right">
+        <h2 class="text-center"><a class="article-title" href="{% url 'blog:blog-info' post.animal %}">{{ post.animal }}</a></h2>
       </div>
-      <h2><a class="article-title" href="{% url 'blog:blog-info' post.animal %}">{{ post.animal }}</a></h2>
-      <p class="article-content text-justify">{{ post.more_info}}</p>
+      
+      <p class="article-content text-justify lead ">{{ post.more_info|linebreaksbr}}</p>
       <ul class="list-group list-group-flush text-center">
-        <li class="list-group-item"><small class="text-muted">Date Found: {{ post.location_discovered }}</small></li>
+        <li class="list-group-item"><small class="text-muted">First Appearance: {{ post.location_discovered }}</small></li>
         <li class="list-group-item"><small class="text-muted">Location: {{ post.location }}</small></li>
         <li class="list-group-item"><small class="text-muted">Category: {{ post.animal_cat }}</small></li>
         <li class="list-group-item"><small class="text-muted">Scientific Name: {{ post.sci_name }}</small></li>
-        <li class="list-group-item"><small class="text-muted">Common Food: {{ post.fav_food }}</small></li>
+        <li class="list-group-item"><small class="text-muted">Diet: {{ post.fav_food }}</small></li>
+        <li class="list-group-item"><small class="text-muted">Classification: <a class="text-bg-primary" href="{% url 'blog:class_view' categories_type=post.an_type %}">{{ post.an_type }}</a></small></li>
       </ul>
     </div>
     
