@@ -152,3 +152,12 @@ a.article-title:hover {
   height: 50%;
 }
 
+.zoom-container {
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
+}
+

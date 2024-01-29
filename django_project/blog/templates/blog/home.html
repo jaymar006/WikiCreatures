@@ -1,21 +1,20 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block title %}Home{% endblock title %}
 {% block content %}
 <div>
   {% for post in posts %}
-    <article class="media content-section mt-2">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="{% url 'blog:class_view' categories_type=post.an_type %}">{{ post.an_type }}</a>
-              <small class="text-muted">{{ post.location_discovered }} |</small>
-              <small class="text-muted">{{ post.location }}</small>
-            </div>
-            <h2><a class="article-title" href="{% url 'blog:blog-info' post.animal%}">{{ post.animal }}</a></h2>
-            <p class="article-content">{{ post.definition }}</p>
-          </div>
-        </article>
-   
-      
+    <article class="media content-section mt-2 zoom-container shadow">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="{% url 'blog:class_view' categories_type=post.an_type %}">{{ post.an_type }}</a>
+          <small class="text-muted">{{ post.location_discovered }} |</small>
+          <small class="text-muted">{{ post.location }}</small>
+        </div>
+        <h2><a class="article-title" href="{% url 'blog:blog-info' post.animal%}">{{ post.animal }}</a></h2>
+        <p class="article-content">{{ post.definition }}</p>
+      </div>
+    </article>
   {% endfor %}
   <a href="#" class="float-right">Back to top</a>
 </div>

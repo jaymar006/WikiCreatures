@@ -1,11 +1,13 @@
 {% extends 'blog/base.html' %}
 {% block title %}Fun Facts{% endblock title %}
 {% block content %}
-<div>
-  <h2 style='text-align: center;'>{{ post.animal }}</h2>
+<div class="container mx-auto text-center mt-3">
+  <h2>Did you know? that....</h2>
 </div>
 
-<div>
+<div class="container mx-auto text-center mt-3">
+  <h2>{{ post.animal }}</h2>
+
   <article class="media content-section mt-2">
     <div class="media-body">
       <h2>{{ random_fact.animal }}</h2>
@@ -15,12 +17,11 @@
 
   <article class="media content-section mt-2">
     <div class="media-body">
-      <div class="article-metadata">
+      <div class="article-metadata mx-auto my-3 img-container zoom-container" >
         <!-- Clickable image to open the modal -->
         <a href="#" data-toggle="modal" data-target="#imageModal">
-          <img src="{{ random_fact.image.url }}" class="img-fluid" alt="Random Fact Image">
+          <img src="{{ random_fact.image.url }}" class="img-fluid mx-auto" alt="Random Fact Image">
         </a>
-        <a href="{% url 'blog:blog-funfacts' %}">Generate another fact</a>
       </div>
     </div>
   </article>
@@ -36,12 +37,17 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body text-center">
         <!-- Image preview in the modal -->
-        <img src="{{ random_fact.image.url }}" class="img-fluid" alt="Image Preview">
+        <img src="{{ random_fact.image.url }}" class="img-fluid mx-auto" alt="Image Preview">
       </div>
     </div>
   </div>
+</div>
+
+
+<div class="container text-center mt-3">
+  <a class="btn btn-secondary" href="{% url 'blog:blog-funfacts' %}" role="button">Generate Another Fact</a>
 </div>
 
 {% endblock %}
